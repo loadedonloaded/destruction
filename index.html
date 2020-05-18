@@ -13,16 +13,18 @@ body {margin: 10px 3% 5%; font-family: Georgia, serif; line-height: 1.35em; max-
 .damage:hover {fill:#800000}
 h2 { font-family: Arial, sans-serif; color: #800000; margin: 2% 2em .5em 0; margin-botom: 30px; padding: 0 0 8px;
   padding-left: 2%; font-size: 25px; }
-.leftbox {float: left; margin: 3px; border: 3px solid #800000; max-height: 99%; max-width: 99%; min-width: 640}
-.rightbox {float: left; margin: 3px; width: 292; border: 3px solid #800000; padding: 4px; height: 402;}
+.leftbox {float:left; margin: 3px; border: 3px solid #800000; max-height: 99%; max-width: 99%; min-width: 640}
+.rightbox {float:left; margin: 3px; width: 292; border: 3px solid #800000; padding: 4px; height: 402;}
+.container {min-width: 1058; width: auto !important; width: 1100px; white-space:nowrap; }
 .bold {font-weight: bold; font-family: Arial; }
-.bodytext {margin-left: 2%; margin-right: 10%; margin-bottom: 20}
+.bodytext {margin-left: 2%; margin-right: 10%; margin-bottom: 20; max-width: 900; }
 .bottom {clear:left; margin: 0 0 10% 2%; padding-top:5px}
 .top {clear:right; clear:left; max-height: 99%; max-width: 99%;}
 .datetext {font-size: 14px; font-family: Arial; }
 .infotext {font-size: 14px; font-family: Arial;}
 .hover {font-size: 14px; font-family: Georgia; color: #800000; margin-left: 2}
 .hover:hover {color: #cc6699; }
+div.clear { clear: both; }
 /* Individual states and territories can be colored as follows:
 #KS, #MT, #PA {fill:#0000FF}
 SF, #TN {fill:#FF0000}
@@ -33,10 +35,12 @@ Place this code in the empty space below. */
 </style>
 </defs>
 <body onload="refreshbutton()">
-<div class="top">
+</body>
+<div id ="body" class="clear">
 <h2>Technology of Computer Destruction</h2>
 <p class="bodytext">[Amid student uprising of the 1960s, students began occupying and in some cases even bombing university computer centers. This is a map of all the instances, to my knowledge, of occupations]</p>
 </div>
+<div class="container">
 <div>
 <svg class="leftbox" viewBox="165 -10 630 630" xmlns="http://www.w3.org/2000/svg" width="640" height="410">
 
@@ -273,14 +277,15 @@ Place this code in the empty space below. */
 <circle id="stanford" class="occupy" onclick="databutton(event)" cx="55.5" cy="260.9" r="11">
     <title>Stanford University</title>
   </circle>
-
+</g>
+</svg>
 </div>
   <div id="textspace" class="rightbox">
 
 
 
   </div>
-
+</div>
 <script type="text/javascript">
   function databutton(event) {
       var identifier = event.target;
@@ -338,8 +343,4 @@ Place this code in the empty space below. */
 
 </script>
 
-</div>
  <div class="bottom"><p>A little bit more text down here</p></div>
-</g>
-</svg>
-</body>
