@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:description" content="a map of computer center occupations and sabotage" />
+<meta property="og:image" content="map.png" />
+<meta property="og:title" content="technology of computer destruction" />
+<meta property="og:url" content="http://loadedonloaded.github.io/destruction" />
+<meta name="twitter:card" content="summary">
+<link rel="shortcut icon" href="schroeder-icon.png"/>
+<title>Technology of Computer Destruction</title>
 <defs>
 <style type="text/css">
 .state {fill:#D0D0D0}                        /* default color for all states not specified below */
@@ -34,6 +43,7 @@ Place this code in the empty space below. */
 
 </style>
 </defs>
+</head>
 <body onload="refreshbutton()">
 </body>
 <div class="bodytext">
@@ -47,9 +57,7 @@ Place this code in the empty space below. */
 <p class="bodytext">
       These protests had two principal causes: the Vietnam War and racial injustice. While issues such as the selective service or Black Studies programs ostensibly had nothing to do with computing, activsts targeted computer centers for reasons both symbolic and practical. On the one hand, computers represented the rationalization and depersonalization of society. Their military origins and their affinity with classified defense contracts meant that, with the exception of ROTC buildings, computer centers were often the most immediate manifestations of the "military-industrial-academic complex" on campus. On the other hand, computers were vital to many universities' daily operations. They were also extremely expensive. Shutting down a computer center halted essential administrative tasks or big-budget research projects, and even a brief occupation could cost the university thousands of dollars in wasted machine time. Students used computers as "hostages" to negotiate demands, knowing that university administrators would be unlikely to apply physical force, since a police raid or a fire hose might risk the integrity of a multi-million dollar computer installation.
 </p>
-<p class="bodytext">
-      [INFORMATION ABOUT THE MAP: THE USE OF COMPUTERS IN UNIVERSITIES]
-</p></div>
+</div>
 <div class="container">
 <svg class="leftbox" viewBox="160 -10 640 640" xmlns="http://www.w3.org/2000/svg" width="620" height="410">
 <style>
@@ -273,6 +281,7 @@ Place this code in the empty space below. */
 <circle fill="#E60000" cx="660" cy="574" r="11"></circle>
 
 
+
 <circle id="berkeley" class="occupy" onclick="databutton(event)" cx="62" cy="250" r="11">
     <title>UC Berkeley</title>
   </circle>
@@ -355,7 +364,7 @@ Place this code in the empty space below. */
 </div>
 <script type="text/javascript">
   var circular = document.getElementsByTagName("circle");
-  for (var i = 0, max = circular.length; i < max; i++) {
+  for (var i = 2, max = circular.length; i < max; i++) {
       circular[i].onmouseover = function() {scrollover(event)};
       circular[i].onmouseout = function() {scrolloff(event)}
 }
@@ -372,7 +381,7 @@ Place this code in the empty space below. */
       g.removeChild(deadbutton)
       g.appendChild(deadbutton)
       var universities = document.getElementsByTagName('title');
-      for (var i = 0, max = circular.length; i < max; i++)
+      for (var i = 1, max = universities.length; i < max; i++)
       document.getElementById("cursorname").innerHTML =  "cursor select: " + universities[i].innerHTML
 }
 
@@ -401,7 +410,7 @@ Place this code in the empty space below. */
         else {infotext=""}
 
 
-      for (var i = 0, max = circular.length; i < max; i++) {
+      for (var i = 2, max = circular.length; i < max; i++) {
       circular[i].style = ""; };
       document.getElementById(school).style.fill = "#000000";
       //document.getElementById(school).style.r = "11";
@@ -411,18 +420,18 @@ Place this code in the empty space below. */
 
 
 var uniarray = [];
-for (var i = 0, max = circular.length; i < max; i++) {
+for (var i = 1, max = circular.length; i < max; i++) {
     uniarray.push(circular[i].id); };
 var universities = document.getElementsByTagName('title');
 var listsource = document.createElement("TextNode")
 listsource = ""
-for (var i = 0, max = circular.length; i < max; i++) {
+for (var i = 1, max = universities.length; i < max; i++) {
     listsource += " <span id='" + uniarray[i] + "' class='hover' onclick='databutton(event)'>" + universities[i].innerHTML + "</span><br>";
 }
 
 
   function refreshbutton() {
-        for (var i = 0, max = circular.length; i < max; i++) {
+        for (var i = 2, max = circular.length; i < max; i++) {
             circular[i].style = ""; };
         var list = document.getElementById("textspace");
         list.innerHTML = ""
@@ -439,4 +448,7 @@ async>
 
 </script>
 
- <div class="bottom"><p>A little bit more text down here</p></div>
+ <div class="bottom">
+<p class="bodytext">
+         [INFORMATION ABOUT THE MAP: THE USE OF COMPUTERS IN UNIVERSITIES]
+   </p></div>
