@@ -8,7 +8,7 @@
 <meta property="og:url" content="http://loadedonloaded.github.io/destruction" />
 <meta name="twitter:card" content="summary">
 <link rel="shortcut icon" href="schroeder-icon.png"/>
-<title>Technology of Computer Destruction</title>
+<!--<title>Technology of Computer Destruction</title>-->
 <defs>
 <style type="text/css">
 .state {fill:#D0D0D0}                        /* default color for all states not specified below */
@@ -18,7 +18,6 @@ body {margin: 10px 3% 5%; font-family: Georgia, serif; line-height: 1.35em; max-
 .separator {stroke:#B0B0B0; stroke-width:2.5}
 .occupy {fill:#FFCC00}
 .occupy:hover {fill:#CC9900; cursor: pointer;}  /* color and width of lines around Alaska and Hawaii */
-.image {object-fit: cover; max-height: 100%; max-width: 100%}
 .image2 { float: right; margin-left: 2%; margin-right: 2%; width: 472px }
 .damage {fill:#E60000}
 .damage:hover {fill:#800000; cursor: pointer;}
@@ -47,7 +46,7 @@ Place this code in the empty space below. */
 </head>
 <body onload="refreshbutton()">
 </body>
-<div class="bodytext">
+<div id="body">
 <br>
 <p class="bodytext"><img src="nelson4.png"></p>
 <p class="bodytext">
@@ -56,10 +55,10 @@ Place this code in the empty space below. */
 <img class="image2" src="wreckage2.png">
 
 <p class="bodytext">
-      These protests had two principal causes: the Vietnam War and racial injustice. While issues such as the selective service or Black Studies programs ostensibly had nothing to do with computing, activsts targeted computer centers for reasons both symbolic and practical. On the one hand, computers represented the rationalization and depersonalization of American society. Their military origins and their affinity with classified defense contracts meant that, with the exception of ROTC buildings, computer centers were often the most immediate manifestations of the "military-industrial-academic complex" on campus. On the other hand, computers were vital to the daily operations of many universities. They were also extremely expensive. Shutting down a computer center halted essential administrative tasks or big-budget research projects, and even a brief occupation could cost the university thousands of dollars in wasted machine time. Students used computers as "hostages" to negotiate demands, knowing that administrators would be unlikely to apply physical force, since a police raid or a fire hose might risk the integrity of a multi-million dollar computer installation.
+      These protests had two principal causes: the Vietnam War and racial injustice. While issues such as the selective service or Black Studies programs ostensibly had nothing to do with computing, activsts targeted computer centers for reasons both symbolic and practical. On the one hand, computers represented the rationalization and depersonalization of society. Their military origins and their affinity with classified defense contracts meant that, with the exception of ROTC buildings, computer centers were often the most immediate manifestations of the "military-industrial-academic complex" on campus. On the other hand, computers were vital to many universities' daily operations. They were also extremely expensive. Shutting down a computer center halted essential administrative tasks or big-budget research projects, and even a brief occupation could cost the university thousands of dollars in wasted machine time. Students used computers as "hostages" to negotiate demands, knowing that university administrators would be unlikely to apply physical force, since a police raid or a fire hose might risk the integrity of a multi-million dollar computer installation.
 </p>
 </div>
-<div class="container">
+<div id="body" class="container">
 <svg class="leftbox" viewBox="160 -10 640 640" xmlns="http://www.w3.org/2000/svg" width="620" height="410">
 <style>
 .cursorname {font-size: 18px; font-family:Arial; }
@@ -382,7 +381,7 @@ Place this code in the empty space below. */
       g.removeChild(deadbutton)
       g.appendChild(deadbutton)
       var universities = document.getElementsByTagName('title');
-      for (var i = 1, max = universities.length; i < max; i++)
+      for (var i = 0, max = universities.length; i < max; i++)
       document.getElementById("cursorname").innerHTML =  "cursor select: " + universities[i].innerHTML
 }
 
@@ -396,24 +395,18 @@ Place this code in the empty space below. */
       var school = identifier.id;
 
       var infotext;
-        if (school=="berkeley"){
-            infotext="<div class='infotext'><span class='bold'>University of California - Berkeley</span><p class='datetext'>Date: Oct 23, 1968</p><p>In the fall of 1968 Black Panther leader Eldridge Cleaver led a student-initiated, faculty-approved course about racism titled “Social Analysis 139x—Dehumanization and Regeneration in the American Social Order.” California Governor Ronald Reagan publicly criticized Berkeley for inviting Cleaver into classrooms, and the regents denied participants any academic credit for the course.</p><p>In October students began a series of protests against the regents’ decision, occupying several buildings. On the same day that administrators were forced to lock themselves into the campus headquarters building, “hundreds” of students occupied the university’s computer center, Campbell Hall, forcing it to temporarily shut down.</p><p class='hover' onclick='refreshbutton()'>return to list</p></div>"}
-        else if (school=="brandeis"){
-            infotext="<div class='infotext'><span class='bold'>Brandeis University</span><p class='datetext'>Date: Jan 8-18, 1969</p><p>On the evening of Tuesday, January 7, two faculty from San Francisco State University visited Brandeis to discuss SFSU's Black Student Union strike, and to encouraged Brandeis students to create their own expression of sympathy for the strikers. The following day roughly 60-75 members of the Brandeis Afro-American Society (AAS) occupied Ford Hall, the university’s central communications center and the home of a $200,000 computer—the only computer on campus.</p><p><img class='image' src='brandeis.png'></p><p>The AAS members immediately entered Ford Hall’s switchboard room and escorted its operators out of the building. They shut down telephone connections across campus, disrupted a local radio broadcast, and silenced radio communication between security cars.</p><p>The AAS issued ten “non-negotiable” demands, including the creation of an Afro-American center, and more scholarships and increased recruitment of Black students. The administration conceded on all demands but one: the establishment of an African Studies Department which, instead of utilizing professors appointed in other departments, would exercise its own “power to hire and fire.”</p><img class='image' src='fordhall3.png'></p><p>After ten days of peaceful occupation, as well as sit-ins and picketing by students across campus, the AAS members left Ford Hall and were granted amnesty by the university.</p><p class='hover' onclick='refreshbutton()'>return to list</p></div>"}
-        else if (school=="fresno"){
-            infotext="<div class='infotext'><span class='bold'>Fresno State University</span><p class='datetext'>Date: May 19, 1970</p><p>This is information about the molotov cocktails.</p></div>"}
-        else if (school=="hofstra"){
-            infotext="<div class='infotext'><span class='bold'>Hofstra University</span><p class='datetext'>Date: May 5, 1969</p><p>In February 1969 members of Hofstra’s Organization of Black Collegians (OBC) wrote a letter to Hofstra’s president enumerating a series of demands, including the creation of an African American Studies Center, the recruitment of more Black faculty and students, and the renaming of the library after Dr. Martin Luther King, Jr.</p><p><img class='image' src='hofstra3.png'></p><p>These demands were not met, and in May 30 members of the OBC occupied the Hofstra University Computer Center, preventing faculty and students from using the facility for several hours.</p></p><p class='hover' onclick='refreshbutton()'>return to list</p></div>"}
+        if (school=="fresno"){
+            infotext="<span class='bold'>Fresno State University</span><p class='datetext'>Date: May 19, 1970</p><p class='infotext'>This is information about the molotov cocktails.</p>"}
         else if (school=="howard"){
-            infotext="<div class='infotext'><span class='bold'>Howard University</span><p class='datetext'>Date: May 6, 1969</p><p>This is information about the seizure of Locke Hall.</p></div>"}
+            infotext="<span class='bold'>Howard University</span><p class='datetext'>Date: May 6, 1969</p><p class='infotext'>This is information about the seizure of Locke Hall.</p>"}
         else if (school=="lawrence"){
-              infotext="<div class='infotext'><span class='bold'>University of Kansas</span><p class='datetext'>Date: Dec 11, 1970</p><p>This is information about the bombinb of Summerfield Hall.</p></div>"}
+              infotext="<span class='bold'>University of Kansas</span><p class='datetext'>Date: Dec 11, 1970</p><p class='infotext'>This is information about the bombinb of Summerfield Hall.</p>"}
         else if (school=="madison"){
-            infotext="<div class='infotext'><span class='bold'>University of Wisconsin - Madison</span><p class='datetext'>Date: Aug 24, 1970</p><p>This is information about the Sterling Hall bombing.</p><p><img class='image' src='sterlinghall.jpg'></p></div>"}
+            infotext="<span class='bold'>University of Wisconsin - Madison</span><p class='datetext'>Date: Aug 24, 1970</p><p class='infotext'>This is information about the Sterling Hall bombing.</p>"}
         else if (school=="northwestern"){
-            infotext="<div class='infotext'><span class='bold'>Northwestern University</span><p class='datetext'>Date: May 3, 1968</p><p>This is information about the occupation of the University Finance Building.</p></div>"}
+            infotext="<span class='bold'>Northwestern University</span><p class='datetext'>Date: May 3, 1968</p><p class='infotext'>This is information about the occupation of the University Finance Building.</p>"}
         else if (school=="stanford"){
-              infotext="<div class='infotext'><span class='bold'>Stanford University</span><p class='datetext'>Date: Feb 10, 1971</p><p>This is information about the occupation of the Stanford Computation Center.</p></div>"}
+              infotext="<span class='bold'>Stanford University</span><p class='datetext'>Date: Feb 10, 1971</p><p class='infotext'>This is information about the occupation of the Stanford Computation Center.</p>"}
         else {infotext=""}
 
 
@@ -427,12 +420,12 @@ Place this code in the empty space below. */
 
 
 var uniarray = [];
-for (var i = 1, max = circular.length; i < max; i++) {
+for (var i = 2, max = circular.length; i < max; i++) {
     uniarray.push(circular[i].id); };
 var universities = document.getElementsByTagName('title');
 var listsource = document.createElement("TextNode")
 listsource = ""
-for (var i = 1, max = universities.length; i < max; i++) {
+for (var i = 0, max = universities.length; i < max; i++) {
     listsource += " <span id='" + uniarray[i] + "' class='hover' onclick='databutton(event)'>" + universities[i].innerHTML + "</span><br>";
 }
 
