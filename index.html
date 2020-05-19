@@ -3,21 +3,21 @@
 <defs>
 <style type="text/css">
 .state {fill:#D0D0D0}                        /* default color for all states not specified below */
-body {margin: 10px 3% 5%; font-family: Georgia, serif; line-height: 1.35em; max-height: 99%; max-width: 99%;}
+body {margin: 10px 3% 5%; font-family: Georgia, serif; line-height: 1.35em; max-height: 99%; max-width: 99%; float:none }
 .borders {stroke:#FFFFFF; stroke-width:2}    /* color and width of borders between states */
 .DCcircle {opacity:1}                        /* set opacity to 0 to hide the DC circle, or 1 to show it */
 .separator {stroke:#B0B0B0; stroke-width:2.5}
 .occupy {fill:#FFCC00}
 .occupy:hover {fill:#CC9900; cursor: pointer;}  /* color and width of lines around Alaska and Hawaii */
+.image2 { float: right; margin-left: 2%; margin-right: 2%; width: 472px }
 .damage {fill:#E60000}
 .damage:hover {fill:#800000; cursor: pointer;}
-h2 { font-family: Arial, sans-serif; color: #800000; margin: 2% 2em .5em 0; margin-botom: 30px; padding: 0 0 8px;
-  padding-left: 2%; font-size: 25px; }
+h2 { font-family: Arial, sans-serif; color: #800000; margin: 5% 2em .5em 0; margin-botom: 30px; padding: 0 0 8px;padding-left: 3%; font-size: 30px; }
 .leftbox {float:left; margin: 3px; border: 3px solid #800000; max-height: 99%; max-width: 99%; min-width: 620}
 .rightbox {float:left; margin: 3px; width: 230; border: 3px solid #800000; padding: 4px; height: 402; overflow: scroll}
 .container {min-width: 920; width: auto !important; width: 920px; }
 .bold {font-weight: bold; font-family: Arial; }
-.bodytext {margin-left: 2%; margin-right: 10%; margin-bottom: 20; max-width: 880; }
+.bodytext {margin-left: 2%; margin-right: 10%; margin-bottom: 20; max-width: 790;}
 .bottom {clear:left; margin: 0 0 10% 2%; padding-top:5px}
 .top {clear:right; clear:left; max-height: 99%; max-width: 99%;}
 .datetext {font-size: 14px; font-family: Arial; }
@@ -36,10 +36,19 @@ Place this code in the empty space below. */
 </defs>
 <body onload="refreshbutton()">
 </body>
-<div id ="body" class="clear">
-<h2>Technology of Computer Destruction</h2>
-<p class="bodytext">[Amid student uprising of the 1960s, students began occupying and in some cases even bombing university computer centers. This is a map of all the instances, to my knowledge, of occupations]</p>
-</div>
+<div class="bodytext">
+<p class="bodytext"><img src="nelson4.png"></p>
+<p class="bodytext">
+      The late 1960s and early 1970s are regarded as pivotal years in the history of computing technology, but they were also pivotal years for what one contemporary writer called "the technology of computer destruction." The same era that witnessed the dawn of the microelectronics revolution also witnessed the nationwide spread of campus protests, in which activsts routinely occupied and in some cases even bombed university computer centers. While data-processing newslets chronicled the founding of Intel and the birth of the commercial microprocesser, they also warned of "arson, bombing, invasion"—new terms added to the DP expert's technical vocabulary in what <i>Computerworld</i> dubbed, in 1970, "the year of the crisis."</p>
+
+<img class="image2" src="wreckage2.png">
+
+<p class="bodytext">
+      These protests had two principal causes: the Vietnam War and racial injustice. While issues such as the selective service or Black Studies programs ostensibly had nothing to do with computing, activsts targeted computer centers for reasons both symbolic and practical. On the one hand, computers represented the rationalization and depersonalization of society. Their military origins and their affinity with classified defense contracts meant that, with the exception of ROTC buildings, computer centers were often the most immediate manifestations of the "military-industrial-academic complex" on campus. On the other hand, computers were vital to many universities' daily operations. They were also extremely expensive. Shutting down a computer center halted essential administrative tasks or big-budget research projects, and even a brief occupation could cost the university thousands of dollars in wasted machine time. Students used computers as "hostages" to negotiate demands, knowing that university administrators would be unlikely to apply physical force, since a police raid or a fire hose might risk the integrity of a multi-million dollar computer installation.
+</p>
+<p class="bodytext">
+      [INFORAMTION ABOUT THE MAP: THE USE OF COMPUTERS IN UNIVERSITIES]
+</p></div>
 <div class="container">
 <svg class="leftbox" viewBox="160 -10 640 640" xmlns="http://www.w3.org/2000/svg" width="620" height="410">
 <style>
@@ -257,6 +266,11 @@ Place this code in the empty space below. */
 <path class="separator" fill="none" d="m 25,440 180,0 220,106 0,64 m -153,-137.72 0,61.72 86,76"/>
 
 <text id="cursorname" class="cursorname" x=400 y=25 fill="#000000">cursor select: </text>
+<text class="cursorname" x=560 y=580 fill=#000000>= protest</text>
+<circle fill="#FFCC00" cx="545" cy="574" r="11"></circle>
+<text class="cursorname" x=675 y=580 fill=#000000>= sabotage</text>
+<circle fill="#E60000" cx="660" cy="574" r="11"></circle>
+
 
 <circle id="berkeley" class="occupy" onclick="databutton(event)" cx="62" cy="250" r="11">
     <title>UC Berkeley</title>
@@ -286,7 +300,7 @@ Place this code in the empty space below. */
       <title>Loyola University</title>
     </circle>
 <circle id="madison" class="damage" onclick="databutton(event)" cx="634" cy="187" r="11">
-    <title>University of Wisconsin - Madison</title>
+    <title>UW Madison</title>
   </circle>
 <circle id="maryland" class="occupy" onclick="databutton(event)" cx="862" cy="252" r="7">
     <title>University of Maryland</title>
@@ -341,7 +355,12 @@ Place this code in the empty space below. */
 <script type="text/javascript">
   var circular = document.getElementsByTagName("circle");
   for (var i = 0, max = circular.length; i < max; i++) {
-      circular[i].onmouseover = function() {scrollover(event)}};
+      circular[i].onmouseover = function() {scrollover(event)};
+      circular[i].onmouseout = function() {scrolloff(event)}
+}
+
+
+
 
 
   function scrollover(event) {
@@ -354,6 +373,10 @@ Place this code in the empty space below. */
       var universities = document.getElementsByTagName('title');
       for (var i = 0, max = circular.length; i < max; i++)
       document.getElementById("cursorname").innerHTML =  "cursor select: " + universities[i].innerHTML
+}
+
+  function scrolloff(event) {
+      document.getElementById("cursorname").innerHTML =  "cursor select:"
 }
 
 
@@ -382,18 +405,19 @@ Place this code in the empty space below. */
       document.getElementById(school).style.fill = "#000000";
       //document.getElementById(school).style.r = "11";
       document.getElementById("textspace").innerHTML = infotext;
-
 }
-        for (var i = 0, max = circular.length; i < max; i++) {
-          circular[i].style = ""; };
-        var uniarray = [];
-        for (var i = 0, max = circular.length; i < max; i++) {
-          uniarray.push(circular[i].id); };
-        var universities = document.getElementsByTagName('title');
-        var listsource = document.createElement("TextNode")
-        listsource = ""
-        for (var i = 0, max = circular.length; i < max; i++) {
-          listsource += " <span id='" + uniarray[i] + "' class='hover' onclick='databutton(event)'>" + universities[i].innerHTML + "</span><br>"; };
+
+
+
+var uniarray = [];
+for (var i = 0, max = circular.length; i < max; i++) {
+    uniarray.push(circular[i].id); };
+var universities = document.getElementsByTagName('title');
+var listsource = document.createElement("TextNode")
+listsource = ""
+for (var i = 0, max = circular.length; i < max; i++) {
+    listsource += " <span id='" + uniarray[i] + "' class='hover' onclick='databutton(event)'>" + universities[i].innerHTML + "</span><br>";
+}
 
 
   function refreshbutton() {
@@ -402,8 +426,6 @@ Place this code in the empty space below. */
         var list = document.getElementById("textspace");
         list.innerHTML = ""
         list.innerHTML = listsource
-
-
 }
 
 </script>
